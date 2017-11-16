@@ -31,13 +31,13 @@ ALLOWED_HOSTS = ["192.168.91.139"]
 # Application definition
 
 INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'polls',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +63,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'polls',
             ],
         },
     },
@@ -85,7 +84,6 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -101,7 +99,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+#AUTHENTICATION_BACKENDS = ('polls.auth.CustomAuth',)
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
